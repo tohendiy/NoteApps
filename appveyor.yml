@@ -1,0 +1,25 @@
+version: 1.0.{build}
+nuget:
+  project_feed: true
+before_build:
+- ps: nuget restore
+build:
+  publish_nuget: true
+  publish_nuget_symbols: true
+  include_nuget_references: true
+  parallel: true
+  verbosity: minimal
+  
+artifacts:
+	-path: NoteAppInstallScript.iss
+deploy:
+- provider: GitHub
+  tag: NoteApp-v$(appveyor_build_version)
+  release: NoteApp-v$(appveyor_build_version)
+  auth_token:
+    secure: WximQzhJ5cLEXeT2z2kT5KVuLXSpg+ka9xfaPI9o16J7flTHC+VTo19TwmqYfRwQ
+  artifact: NoteAppInstallScript.iss
+  draft:true
+  prerelease: false
+  on:
+	branch: master
