@@ -11,7 +11,7 @@ build:
   verbosity: minimal
   
 artifacts:
-	-path: NoteAppInstallScript.iss
+- path: NoteAppInstallScript.iss
 deploy:
 - provider: GitHub
   tag: NoteApp-v$(appveyor_build_version)
@@ -22,4 +22,4 @@ deploy:
   draft:true
   prerelease: false
   on:
-	branch: master
+branch: master
