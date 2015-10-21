@@ -21,5 +21,3 @@ deploy:
   artifact: NoteAppInstallScript.iss
   draft: true
   prerelease: false
-  on:
-branch: master
