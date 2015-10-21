@@ -19,7 +19,7 @@ deploy:
   auth_token:
     secure: WximQzhJ5cLEXeT2z2kT5KVuLXSpg+ka9xfaPI9o16J7flTHC+VTo19TwmqYfRwQ
   artifact: NoteAppInstallScript.iss
-  draft:true
+  draft: true
   prerelease: false
   on:
 branch: master
